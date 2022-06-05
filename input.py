@@ -1,5 +1,6 @@
 import pandas as pd
 from pprint import pprint
+import openpyxl
 df = pd.read_csv('bio.csv')
 YEAR = '22'
 BLOCK = '1'
@@ -40,7 +41,7 @@ for index in dict:
 df['register no.'] = register
 df = df.sort_values('register no.')
 print(df)
-df.to_csv('enrollment.csv')
+df.to_excel('enrollment.xlsx',sheet_name='Sheet1')
 
 
 
