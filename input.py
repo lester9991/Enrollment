@@ -40,7 +40,7 @@ for index in dict:
 df['register no.'] = register
 df = df.sort_values('register no.')
 print(df)
-
+df.to_csv('enrollment.csv')
 
 
 
