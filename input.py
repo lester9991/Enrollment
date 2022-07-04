@@ -61,8 +61,10 @@ class Dataframe:
         print(df)
         df.to_csv('enrollment.csv', index=False)
 
-    def remove_register(self, register=[]):
-        index = [self.df.index[self.df['register no.'] == i][0] for i in register]
+    def remove_register(self, register=int):
+
+
+        index = self.df.index[self.df['register no.'] == int(register)][0]
         print(index)
         df = self.df.drop(index, axis=0)
         self.save_csv(df)
@@ -77,6 +79,6 @@ class Dataframe:
 
 
     def search_student(self, register=int):
-        register_no = self.df.index[self.df['register no.'] == register]
+        register_no = self.df.index[self.df['register no.'] == int(register)]
         info = self.df.iloc[[register_no[0]]]
         print(info)
